@@ -3,17 +3,19 @@
     <title>Shopping cart</title>
   </head>
   <body>
-    <input id="food-selection" type="text" />
-    <button onclick="addToCart('Apple')">Apple</button>
-    <button onclick="addToCart('Egg')">Egg</button>
-    <button onclick="addToCart('Tomato')">Tomato</button>
-    <button onclick="clearCart()">clear</button>
+    <label for="food-selection">Select a food:</label>
+    <input id="food-selection" type="text" placeholder="Food" id="Food1" name="food">
+    <button onclick="getSelectedFood()">Get Selected Food</button>
+    <button onclick="addToCart('Apple')" style="background-color: green; color:white;border-radius: 5px; padding: 10px 20px;">Apple</button>
+    <button onclick="addToCart('Egg')" style="background-color: blue; color: white; border-radius: 5px; padding: 10px 20px;">Egg</button>
+
+    <button onclick="addToCart('Tomato')" style="background-color:rgb(196, 28, 28);color:white;border-radius: 5px; padding: 10px 20px;">Tomato</button>
+    <button onclick="clearCart()" style="background-color: azure; color:black;border-radius: 5px; padding: 10px 20px;">clear</button>
     
     <div id="cart"></div>
 
     <script>
         const cart = document.getElementById('cart');
-
 
         function addToCart(food){
             const cartItem = document.createElement('div');
@@ -26,6 +28,15 @@
             cart.innerHTML = '';
 
         }
+
+       
+
+        function getSelectedFood() {
+            const foodInput = document.getElementById('food-selection');
+            const selectedFood = foodInput.value;
+            alert('Selected food: ' + selectedFood);
+        }
+
 
     </script>
 
