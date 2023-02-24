@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <title>Shopping cart</title>
+  </head>
+  <body>
+    <input id="food-selection" type="text" />
+    <button onclick="addToCart('Apple')">Apple</button>
+    <button onclick="addToCart('Egg')">Egg</button>
+    <button onclick="addToCart('Tomato')">Tomato</button>
+    <button onclick="addToCart()">clear</button>
+    
+    <div id="cart"></div>
+
+    <script>
+        const cart = document.getElementById('cart');
+
+
+        function addToCart(food){
+            const cartItem = document.createElement('div');
+            cartItem.innerText = food;
+            cart.appendChild(cartItem);
+
+        }
+
+        function clearCart(){
+            cart.innerHTML = '';
+
+        }
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </body>
