@@ -3,27 +3,36 @@
         <title>My todo app</title>
     </head>
     <body>
-        <button>Press me</button>
+        <input id="todo-title" type="text"  />
+        <button onclick= "addTodo()"> Add Todo</button>
+        <div id="todo-list"></div>
 
         <script>
-           let todo1 = 'Learn Electromagnetics';
-           let todo2 = 'Shopping';
-           let todo3 = 'Do the Homework';
-           let todo4 = 'Fun';
+           const todos = ['Learn Electrmagnetics', 'Shopping','Do the Homework'];
 
-           let todos = ['Learn Electrmagnetics', 'Shopping','Do the Homework'];
-           todos.push('another todo');
+           render();
 
-           function addtodo(todotitle) {
-            let element = document.createElement('div');
-            element.innerText = todotitle;
-            document.body.appendChild(element);
+           function addTodo() {
+            const textbox = document.getElementById('todo-title');
+            const title = textbox.value;
+            todos.push(title);
+
+            render();
+
            }
-           addtodo(todo1);
-           addtodo(todo2);
-           addtodo(todo3);
+           function render() {
+            //reset our list
+            document.getElementById('todo-list').innerHTML='';
 
-
+            todos.forEach(function(todotitle){
+            const element = document.createElement('div');
+            element.innerText = todoTitle;
+            const todoList = document.getElementById('todo-list');
+            todoList.appendChild(element);
+           });
+           
+        }
+     
         </script>
     </body>
 </html>
